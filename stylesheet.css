@@ -1,0 +1,30 @@
+
+body{
+    margin: 0;
+    background-color: #202020;
+}
+header{
+    background-color: #404040;
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+}
+header > h1, h2{
+    color: white;
+    text-align: center;
+}
+h1, h2, h3, p, a{
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    margin-top: 0;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+img{
+    width: 200px;           /*ändrar bredden på bilden*/
+    height: auto;           /*ändrar höjden på bilden automatiskt*/
+    border-radius: 50%;     /*gör att den blir rund*/
+    object-fit: cover;      /*gör att bilden fyller cirkeln utan att bli förvrängd*/
+}
