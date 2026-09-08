@@ -1,0 +1,77 @@
+html{
+    font-size: 8px;                 /*ställer in rem*/
+}
+body{
+    margin: 0;
+    background-color: #202020;
+}
+header{
+    padding: 4rem 0;
+    background-color: #404040;
+    border-bottom-left-radius: 5%;
+    border-bottom-right-radius: 5%;
+    display: flex;                              /*skapar flex för att kunna centrera innehållet*/
+    flex-direction: column;                     /*ändrar från row till column för fallande lista*/
+    align-items: center;                        /*centrerar innehållet vågrätt*/
+}
+header > img,
+header > h1,
+header > h2{
+    display: block;                             /*skapar block för varje innehåll*/
+}
+header > h1,
+header > h2{
+    color: white;
+}
+h1, h2, h3, p, a{
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+    margin: 0;
+    font-size: 6rem;
+}
+h1, h2{
+    font-weight: lighter;
+}
+h2{
+    margin: 1rem 0;
+    font-size: 4rem;
+}
+h3{
+    font-size: 3rem;
+}
+p, a{
+    margin: 0;
+    font-size: 2rem;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+img{
+    width: 200px;           /*ändrar bredden på bilden*/
+    height: auto;           /*ändrar höjden på bilden automatiskt*/
+    border-radius: 50%;     /*gör att den blir rund*/
+    object-fit: cover;      /*gör att bilden fyller cirkeln utan att bli förvrängd*/
+}
+article{
+    margin-top: 3rem;
+    padding: 1rem 2rem;
+    background-color: #ffd800;
+    border-radius: 5%;
+}
+.arbetslivserfarenhet, .link, .contact{
+    font-weight: bold;
+}
+footer{
+    margin: 3rem 0;
+}
+footer > h2{
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+}
+
+@media screen and () {
+    
+}
