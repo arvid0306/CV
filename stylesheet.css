@@ -2,11 +2,11 @@ html{
     font-size: 8px;                 /*ställer in rem*/
 }
 body{
-    margin: 0;
+    margin: 0;                      /*tar bort marginalen utanför body*/
     background-color: #202020;
 }
 header{
-    padding: 4rem 0;
+    padding: 4rem 0;                /*trycker in innehålet 4rem från padding top och bottom men lämnar left och right orört*/
     background-color: #404040;
     border-bottom-left-radius: 5%;
     border-bottom-right-radius: 5%;
@@ -14,24 +14,27 @@ header{
     flex-direction: column;                     /*ändrar från row till column för fallande lista*/
     align-items: center;                        /*centrerar innehållet vågrätt*/
 }
-header > img,
-header > h1,
-header > h2{
+header > .header-name,
+header > .header-img{
     display: block;                             /*skapar block för varje innehåll*/
 }
-header > h1,
-header > h2{
+.header-name > h1,
+.header-name > h2{
     color: white;
+}
+.header-name{
+    text-align: center;
 }
 h1, h2, h3, p, a{
     font-family: Arial, Helvetica, sans-serif;
+    overflow-wrap: anywhere;                    /*gör så att innehållet cuttas och åker ner på ny rad istället för att skjutas ut utanför sin förälder*/
 }
 h1{
     margin: 0;
     font-size: 6rem;
 }
 h1, h2{
-    font-weight: lighter;
+    font-weight: lighter;                       /*ändrar fetstilen på texten*/
 }
 h2{
     margin: 1rem 0;
@@ -46,10 +49,11 @@ p, a{
 }
 a{
     color: black;
-    text-decoration: none;
+    text-decoration: none;                      /*tar bort understrecket på länkarna*/
 }
 img{
-    width: 200px;           /*ändrar bredden på bilden*/
+    width: 50%;           /*ändrar bredden på bilden*/
+    margin-left: 25%;
     height: auto;           /*ändrar höjden på bilden automatiskt*/
     border-radius: 50%;     /*gör att den blir rund*/
     object-fit: cover;      /*gör att bilden fyller cirkeln utan att bli förvrängd*/
@@ -61,7 +65,7 @@ article{
     border-radius: 5%;
 }
 .arbetslivserfarenhet, .link, .contact{
-    font-weight: bold;
+    font-weight: bold;                          /*ändrar fetstilen på texten*/
 }
 footer{
     margin: 3rem 0;
@@ -72,6 +76,99 @@ footer > h2{
     color: white;
 }
 
-@media screen and () {
-    
+@media (min-width: 768px) {                     /*allt innanför denhär aktiveras enbart om skärmen är större än 768px*/
+    header{
+        display: grid;                          /*skapar en grid*/
+        grid-template-columns: 1fr 3fr;         /*skapar 2 kolumner fördelat 25% 75%*/
+        grid-template-rows: auto;               /*skapar en rad som anpassar höjden*/
+        grid-template-areas:                    /*skapar en layout för hur innehållet ska placeras i griden*/
+            "img name";
+
+        padding: 0;
+        background-color: #202020;
+    }
+    .header-name{
+        grid-area: name;                        /*kopplar akutell iframe till rätt id i grid area*/
+        align-self: flex-start;                 /*drar innehållet till toppen av header*/
+
+        margin: 5% 0 0 5%;                      /*sätter margin i toppen och till vänster*/
+    }
+    .header-name > h1,
+    .header-name > h2{
+        text-align: left;                       /*flyttar texten till vänsterkant*/
+    }
+    h1{
+        font-size: 9rem;
+        font-weight: bold;
+    }
+    h2{
+        font-size: 5rem;
+        font-weight: bold;
+    }
+    .header-img{
+        grid-area: img;                         /*kopplar akutell iframe till rätt id i grid area*/
+        margin: 10%;
+
+        background-color: #404040;
+        border-radius: 10%;
+    }
+    img{
+        width: 80%;
+        margin: 10%;
+    }
+    main > div{
+        display: grid;                          /*skapar en grid inuti div*/
+        grid-template-columns: 1fr 1fr 1fr;     /*skapar 3 kolumner som delar lika på ytan*/
+        grid-template-rows: auto;               /*skapar en rad som ändrar höjd automatiskt*/
+        grid-template-areas:                    /*skapar en layout för hur innehållet ska placeras i grid*/
+            "arbete länkar kontakt";
+        column-gap: 5%;                         /*skapar ett gap mellan varje kolumn*/
+        padding: 2% 5%;                         /*skapar padding 2% i topp och botten och 5% till vänster och höger. på så sätt blir det samma avstånd mellan boxarna som till ytterkanterna*/
+    }
+    .personlig{
+        background-color: #202020;
+    }
+    .personlig > h3,
+    .personlig > p,
+    .länkar > h3,
+    .länkar > .link{
+        color: white;
+    }
+    .personlig{
+        margin: 0 2.5%;
+        padding: 0;
+    }
+    .personlig > h3{
+        margin: 0 0 2rem 0;
+    }
+    .personlig > p{
+        font-size: 3rem;
+    }
+    .arbete > h3,
+    .länkar > h3,
+    .kontakt > h3{
+        text-align: center;
+        margin-top: 5%;
+        font-size: 4rem;
+    }
+    .arbete > p,
+    .länkar > a,
+    .kontakt > p{
+        display: inline-block;      /*gör hela länken till en ruta så att marginalen gäller hela länken och inte bara första raden av den*/
+        margin: 0 5% 5% 5%;
+    }
+    .arbete{
+        grid-area: arbete;          /*kopplar akutell iframe till rätt id i grid area*/
+    }
+    .länkar{
+        grid-area: länkar;          /*kopplar akutell iframe till rätt id i grid area*/
+
+        background-color: #404040;
+    }
+    .kontakt{
+        grid-area: kontakt;         /*kopplar akutell iframe till rätt id i grid area*/
+    }
+    h3{
+        font-size: 5rem;
+    }
 }
