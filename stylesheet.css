@@ -62,7 +62,7 @@ article{
     margin-top: 3rem;
     padding: 1rem 2rem;
     background-color: #ffd800;
-    border-radius: 5%;
+    border-radius: 2rem;
 }
 .arbetslivserfarenhet, .link, .contact{
     font-weight: bold;                          /*ändrar fetstilen på texten*/
@@ -110,7 +110,7 @@ footer > h2{
         margin: 10%;
 
         background-color: #404040;
-        border-radius: 10%;
+        border-radius: 4rem;
     }
     img{
         width: 80%;
