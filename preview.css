@@ -81,7 +81,7 @@ footer > p{
         flex-basis: 12rem;           /*ställer grundbredden på detta element till 12 rem (samma storlek som knappen), detta använd för att kunna centrera huvudrubriken mellan knappen och tomrummet så att texten blir exakt i mitten*/
     }
     main{
-    height: 100vh;                  /*ändrar grid heighten så att alla 4 iframe syns på samma i samma visning*/
+    height: 100vh;                      /*ändrar grid heighten så att höjden är hela visningsytans höjd*/
     grid-template-columns: 1fr 1fr;     /*skapar 2 kolumner som delar på utrymmet*/
     grid-template-rows: auto auto;      /*skapar 2 rader som ändrar höjden efter innehållet*/
     grid-template-areas:                /*skapar en layout för hur innehållet ska placeras i griden*/
