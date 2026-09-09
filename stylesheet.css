@@ -27,6 +27,7 @@ header > .header-img{
 }
 h1, h2, h3, p, a{
     font-family: Arial, Helvetica, sans-serif;
+    overflow-wrap: anywhere;
 }
 h1{
     margin: 0;
@@ -86,7 +87,6 @@ footer > h2{
         padding: 0;
         background-color: #202020;
     }
-
     .header-name{
         grid-area: name;
         align-self: flex-start;
@@ -116,7 +116,19 @@ footer > h2{
         width: 80%;
         margin: 10%;
     }
+    main > div{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "arbete länkar kontakt";
+        column-gap: 5%;
+        padding: 2% 5%;
+    }
     .personlig{
+        grid-area: personlig;
+        grid-column: 1 / 4;
+
         background-color: #202020;
     }
     .personlig > h3,
@@ -134,6 +146,29 @@ footer > h2{
     }
     .personlig > p{
         font-size: 3rem;
+    }
+    .arbete > h3,
+    .länkar > h3,
+    .kontakt > h3{
+        text-align: center;
+        margin-top: 5%;
+        font-size: 4rem;
+    }
+    .arbete > p,
+    .länkar > a,
+    .kontakt > p{
+        margin: 0 5% 5% 5%;
+    }
+    .arbete{
+        grid-area: arbete;
+    }
+    .länkar{
+        grid-area: länkar;
+
+        background-color: #404040;
+    }
+    .kontakt{
+        grid-area: kontakt;
     }
     h3{
         font-size: 5rem;
