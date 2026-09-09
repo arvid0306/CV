@@ -11,9 +11,32 @@ nav{
 
     align-items: center;            /*centrerar innehållet lodrätt*/
 }
+main{
+    display: grid;                      /*skapar en gridlayout*/
+    height: 200vh;                      /*sätter höjden för layouten så att hela layouten är 2 skärmhöjder högt. detta för att ge varje iframe mer utrymme*/
+    grid-template-columns: 1fr;         /*skapar 1 kolumn*/
+    grid-template-rows: auto auto auto auto;      /*skapar 4 rader som ändrar höjden efter innehållet*/
+    grid-template-areas:                /*skapar en layout för hur innehållet ska placeras i griden*/
+       "tabell"
+       "formulär"
+       "responsivitet"
+       "mobile";
+}
+.tabell{
+    grid-area: tabell;                  /*kopplar akutell iframe till rätt id i grid area*/
+}
+.formulär{
+    grid-area: formulär;                /*kopplar akutell iframe till rätt id i grid area*/
+}
+.responsivitet{
+    grid-area: responsivitet;           /*kopplar akutell iframe till rätt id i grid area*/
+}
+.mobile{
+    grid-area: mobile;                  /*kopplar akutell iframe till rätt id i grid area*/
+}
 nav > a,
 nav > h1,
-footer > h2{
+footer > p{
     color: white;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -33,38 +56,17 @@ nav > h1{
     flex: 1;
     text-align: center;             /*centrerar huvudrubriken mellan knappen och den högra ytterkanten*/
 }
-main{
-    display: grid;                      /*skapar en gridlayout*/
-    height: 100vh;                      /*sätter höjden för layouten till hela visningsytan*/
-    grid-template-columns: 1fr 1fr;     /*skapar 2 kolumner som delar på utrymmet*/
-    grid-template-rows: auto auto;      /*skapar 2 rader som ändrar höjden efter innehållet*/
-    grid-template-areas:                /*skapar en layout för hur innehållet ska placeras i griden*/
-        "tabell formulär"
-        "responsivitet mobile";
-}
 iframe{
     width: 100%;                        /*ändrar bredden på iframen så att den täcker hela sin grid*/
     height: 100%;                       /*ändrar höjden på iframen så att den täcker hela sin grid*/
     box-sizing: border-box;             /*gör att den totala storleken för iframe blir 100% av sin grid och inte större trots border och padding till exempel*/
     border: 1rem #404040 solid;
 }
-.tabell{
-    grid-area: tabell;                  /*kopplar akutell iframe till rätt id i grid area*/
-}
-.formulär{
-    grid-area: formulär;                /*kopplar akutell iframe till rätt id i grid area*/
-}
-.responsivitet{
-    grid-area: responsivitet;           /*kopplar akutell iframe till rätt id i grid area*/
-}
-.mobile{
-    grid-area: mobile;                  /*kopplar akutell iframe till rätt id i grid area*/
-}
 footer{
     padding: 2rem;
     background-color: #202020;
 }
-footer > h2{
+footer > p{
     text-align: center;
     font-size: 2rem;
 }
@@ -72,5 +74,13 @@ footer > h2{
     nav::after{                     /*skapar ett element sist på flex raden*/
         content: "";                /*skapar tomt innehåll*/
         flex: 0 0 12rem;            /*ställer storleken på detta element till 12 rem (samma storlek som knappen), detta använd för att kunna centrera huvudrubriken på sidan*/
+    }
+    main{
+    height: 100vh;                  /*ändrar grid heighten så att alla 4 iframe syns på samma i samma visning*/
+    grid-template-columns: 1fr 1fr;     /*skapar 2 kolumner som delar på utrymmet*/
+    grid-template-rows: auto auto;      /*skapar 2 rader som ändrar höjden efter innehållet*/
+    grid-template-areas:                /*skapar en layout för hur innehållet ska placeras i griden*/
+        "tabell formulär"
+        "responsivitet mobile";
     }
 }
