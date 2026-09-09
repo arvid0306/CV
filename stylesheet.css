@@ -65,7 +65,10 @@ img{
     border-radius: 50%;     /*gör att den blir rund*/
     object-fit: cover;      /*gör att bilden fyller cirkeln utan att bli förvrängd*/
 }
-article{
+.personlig,
+.arbete,
+.länkar,
+.kontakt{
     margin-top: 3rem;
     padding: 1rem 2rem;
     background-color: #ffd800;
@@ -77,7 +80,7 @@ article{
 footer{
     margin: 3rem 0;
 }
-footer > h2{
+footer > p{
     text-align: center;
     font-size: 2rem;
     color: white;
