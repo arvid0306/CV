@@ -71,9 +71,14 @@ footer > p{
     font-size: 2rem;
 }
 @media (min-width: 768px) {         /*allt innanför denna aktiveras enbart när skärmen är större än 768px*/
+    nav > a{
+        flex-basis: 7rem;           /*sätter grundbredden till 7rem*/
+        text-align: center;         /*centrerar texten inuti knappen*/
+        box-sizing: border-box;     /*gör så att padding ingår i den totala bredden*/
+    }
     nav::after{                     /*skapar ett element sist på flex raden*/
         content: "";                /*skapar tomt innehåll*/
-        flex: 0 0 12rem;            /*ställer storleken på detta element till 12 rem (samma storlek som knappen), detta använd för att kunna centrera huvudrubriken på sidan*/
+        flex-basis: 7rem;           /*ställer grundbredden på detta element till 7 rem (samma storlek som knappen), detta använd för att kunna centrera huvudrubriken mellan knappen och tomrummet så att texten blir exakt i mitten*/
     }
     main{
     height: 100vh;                  /*ändrar grid heighten så att alla 4 iframe syns på samma i samma visning*/
