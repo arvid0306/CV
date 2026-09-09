@@ -15,7 +15,7 @@ header{
     align-items: center;                        /*centrerar innehållet vågrätt*/
 }
 header > .header-name,
-header > .header-img{
+header > .div-img{
     display: block;                             /*skapar block för varje innehåll*/
 }
 .header-name > h1,
@@ -25,7 +25,7 @@ header > .header-img{
 .header-name{
     text-align: center;
 }
-h1, h2, h3, p, a{
+h1, h2, h3, p, a, li{
     font-family: Arial, Helvetica, sans-serif;
     overflow-wrap: anywhere;                    /*gör så att innehållet cuttas och åker ner på ny rad istället för att skjutas ut utanför sin förälder*/
 }
@@ -43,9 +43,16 @@ h2{
 h3{
     font-size: 3rem;
 }
-p, a{
+p, a, li{
     margin: 0;
     font-size: 2rem;
+}
+ul{
+    padding: 0;
+}
+li{
+    list-style: none;
+    margin-bottom: 2rem;
 }
 a{
     color: black;
@@ -105,7 +112,7 @@ footer > h2{
         font-size: 5rem;
         font-weight: bold;
     }
-    .header-img{
+    .div-img{
         grid-area: img;                         /*kopplar akutell iframe till rätt id i grid area*/
         margin: 10%;
 
@@ -151,7 +158,7 @@ footer > h2{
         margin-top: 5%;
         font-size: 4rem;
     }
-    .arbete > p,
+    .arbete > ul,
     .länkar > a,
     .kontakt > p{
         display: inline-block;      /*gör hela länken till en ruta så att marginalen gäller hela länken och inte bara första raden av den*/
