@@ -51,7 +51,8 @@ a{
     text-decoration: none;
 }
 img{
-    width: 200px;           /*ändrar bredden på bilden*/
+    width: 50%;           /*ändrar bredden på bilden*/
+    margin-left: 25%;
     height: auto;           /*ändrar höjden på bilden automatiskt*/
     border-radius: 50%;     /*gör att den blir rund*/
     object-fit: cover;      /*gör att bilden fyller cirkeln utan att bli förvrängd*/
@@ -85,32 +86,56 @@ footer > h2{
         padding: 0;
         background-color: #202020;
     }
+
     .header-name{
         grid-area: name;
+        align-self: flex-start;
 
-        margin: 5% 0 0 10%
+        margin: 5% 0 0 5%
     }
     .header-name > h1,
     .header-name > h2{
         display: flex;
-        justify-content: flex-start;
     }
     h1{
-        grid-area: h1;
-
-        font-size: 8rem;
+        font-size: 9rem;
+        font-weight: bold;
     }
     h2{
-        grid-area: h2;
-
-        font-size: 4rem;
+        font-size: 5rem;
+        font-weight: bold;
     }
     .header-img{
         grid-area: img;
+        margin: 10%;
+
+        background-color: #404040;
+        border-radius: 10%;
     }
     img{
-        width: 250px;
-        margin: 10% 0 10% 10%;
-        
+        width: 80%;
+        margin: 10%;
+    }
+    .personlig{
+        background-color: #202020;
+    }
+    .personlig > h3,
+    .personlig > p,
+    .länkar > h3,
+    .länkar > .link{
+        color: white;
+    }
+    .personlig{
+        margin: 0 2.5%;
+        padding: 0;
+    }
+    .personlig > h3{
+        margin: 0 0 2rem 0;
+    }
+    .personlig > p{
+        font-size: 3rem;
+    }
+    h3{
+        font-size: 5rem;
     }
 }
