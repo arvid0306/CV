@@ -1,17 +1,19 @@
-html{
-    font-size: 8px;                 /*ställer in rem*/
-}
 body{
     margin: 0;                      /*tar bort margin utanför body*/
+    background-color: #202020;
 }
 nav{
     display: flex;                  /*skapar en vågrät lista inuti nav*/
     background-color: #202020;    
-    padding: 2rem;                  /*gör så att innehållet inte ligger emot kanterna på nav*/
+    padding: 1rem;                  /*gör så att innehållet inte ligger emot kanterna på nav*/
 
     align-items: center;            /*centrerar innehållet lodrätt*/
 }
 main{
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.projekt{
     display: grid;                      /*skapar en gridlayout*/
     height: 200vh;                      /*sätter höjden för layouten så att hela layouten är 2 skärmhöjder högt. detta för att ge varje iframe mer utrymme*/
     grid-template-columns: 1fr;         /*skapar 1 kolumn*/
@@ -42,16 +44,16 @@ footer > p{
 }
 nav > a{
     display: inline-block;          /*skapar ett block som också gör att hela knappen blir klickbar*/
-    padding: 2rem;                  /*gör så att texten i knappen inte ligger emot knappens kanter*/
+    padding: 1rem;                  /*gör så att texten i knappen inte ligger emot knappens kanter*/
 
     background-color: #404040;
     border-radius: 1rem;
     color: white;
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 1rem;
 }
 nav > h1{
-    font-size: 4rem;
+    font-size: 2rem;
     margin: 0;
     flex: 1;
     text-align: center;             /*centrerar huvudrubriken mellan knappen och den högra ytterkanten*/
@@ -61,31 +63,32 @@ iframe{
     height: 100%;                       /*ändrar höjden på iframen så att den täcker hela sin grid*/
     box-sizing: border-box;             /*gör att den totala storleken för iframe blir 100% av sin grid och inte större trots border och padding till exempel*/
     border: 1rem #404040 solid;
+    background-color: white;
 }
 footer{
-    padding: 2rem;
+    padding: 1rem;
     background-color: #202020;
 }
 footer > p{
     text-align: center;
-    font-size: 2rem;
+    font-size: 1rem;
 }
 @media (min-width: 768px) {         /*allt innanför denna aktiveras enbart när skärmen är större än 768px*/
     nav > a{
-        flex-basis: 12rem;           /*sätter grundbredden till 12rem*/
+        flex-basis: 7rem;           /*sätter grundbredden till 7rem*/
         text-align: center;         /*centrerar texten inuti knappen*/
         box-sizing: border-box;     /*gör så att padding ingår i den totala bredden*/
     }
     nav::after{                     /*skapar ett element sist på flex raden*/
         content: "";                /*skapar tomt innehåll*/
-        flex-basis: 12rem;           /*ställer grundbredden på detta element till 12 rem (samma storlek som knappen), detta använd för att kunna centrera huvudrubriken mellan knappen och tomrummet så att texten blir exakt i mitten*/
+        flex-basis: 7rem;           /*ställer grundbredden på detta element till 7 rem (samma storlek som knappen), detta använd för att kunna centrera huvudrubriken mellan knappen och tomrummet så att texten blir exakt i mitten*/
     }
-    main{
-    height: 100vh;                      /*ändrar grid heighten så att höjden är hela visningsytans höjd*/
-    grid-template-columns: 1fr 1fr;     /*skapar 2 kolumner som delar på utrymmet*/
-    grid-template-rows: auto auto;      /*skapar 2 rader som ändrar höjden efter innehållet*/
-    grid-template-areas:                /*skapar en layout för hur innehållet ska placeras i griden*/
-        "tabell formulär"
-        "responsivitet mobile";
+    .projekt{
+        height: 100vh;                      /*ändrar grid heighten så att höjden är hela visningsytans höjd*/
+        grid-template-columns: 1fr 1fr;     /*skapar 2 kolumner som delar på utrymmet*/
+        grid-template-rows: auto auto;      /*skapar 2 rader som ändrar höjden efter innehållet*/
+        grid-template-areas:                /*skapar en layout för hur innehållet ska placeras i griden*/
+            "tabell formulär"
+            "responsivitet mobile";
     }
 }

@@ -1,12 +1,15 @@
-html{
-    font-size: 8px;                 /*ställer in rem*/
+main{
+    max-width: 1400px;              /*sätter bredden på main till max 1400px*/
+    margin: 0 auto;                 /*sätter automatisk margin till vänster och höger så sidan centreras*/
+    display: grid;
+    gap: 2rem;
 }
 body{
     margin: 0;                      /*tar bort marginalen utanför body*/
     background-color: #202020;
 }
 header{
-    padding: 4rem 0;                /*trycker in innehålet 4rem från padding top och bottom men lämnar left och right orört*/
+    padding: 3rem 0;                /*trycker in innehålet 3rem från padding top och bottom men lämnar left och right orört*/
     background-color: #404040;
     border-bottom-left-radius: 5%;
     border-bottom-right-radius: 5%;
@@ -31,28 +34,29 @@ h1, h2, p, a, li{
 }
 h1{
     margin: 0;
-    font-size: 6rem;
+    font-size: 4rem;
 }
 h1, .persontitel{
     font-weight: lighter;                       /*ändrar fetstilen på texten*/
 }
 h2{
-    font-size: 3rem;
-}
-p, a, li{
-    margin: 0;
     font-size: 2rem;
+}
+p, li{
+    margin: 0;
+    font-size: 1rem;
 }
 .persontitel{
     margin: 1rem 0;
-    font-size: 4rem;
+    font-size: 2rem;
 }
 ul{
     padding: 0;
 }
 li{
     list-style: none;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
 }
 a{
     color: black;
@@ -65,24 +69,24 @@ img{
     border-radius: 50%;     /*gör att den blir rund*/
     object-fit: cover;      /*gör att bilden fyller cirkeln utan att bli förvrängd*/
 }
+main > div{
+    display: grid;
+    gap: 2rem;
+}
 .personlig,
 .arbete,
 .länkar,
 .kontakt{
-    margin-top: 3rem;
     padding: 1rem 2rem;
     background-color: #ffd800;
-    border-radius: 2rem;
-}
-.arbetslivserfarenhet, .link, .contact{
-    font-weight: bold;                          /*ändrar fetstilen på texten*/
+    border-radius: 1rem;
 }
 footer{
-    margin: 3rem 0;
+    margin-bottom: 2rem;
 }
 footer > p{
     text-align: center;
-    font-size: 2rem;
+    font-size: 1rem;
     color: white;
 }
 
@@ -98,36 +102,36 @@ footer > p{
         background-color: #202020;
     }
     .header-name{
-        grid-area: name;                        /*kopplar akutell iframe till rätt id i grid area*/
+        grid-area: name;                        /*kopplar aktuell section till rätt grid-area*/
         align-self: flex-start;                 /*drar innehållet till toppen av header*/
 
-        margin: 5% 0 0 5%;                      /*sätter margin i toppen och till vänster*/
+        margin: 3rem 0 0 5%;                      /*sätter margin i toppen och till vänster*/
     }
     .header-name > h1,
     .header-name > p{
         text-align: left;                       /*flyttar texten till vänsterkant*/
     }
     h1{
-        font-size: 9rem;
-        font-weight: bold;
-    }
-    .persontitel{
         font-size: 5rem;
         font-weight: bold;
     }
+    .persontitel{
+        font-size: 3rem;
+        font-weight: bold;
+    }
     .div-img{
-        grid-area: img;                         /*kopplar akutell iframe till rätt id i grid area*/
+        grid-area: img;                         /*kopplar .div-img till rätt id i grid area*/
         margin: 10%;
 
         background-color: #404040;
-        border-radius: 4rem;
+        border-radius: 2rem;
     }
     img{
         width: 80%;
         margin: 10%;
     }
     main > div{
-        display: grid;                          /*skapar en grid inuti div*/
+        display: grid;
         grid-template-columns: 1fr 1fr 1fr;     /*skapar 3 kolumner som delar lika på ytan*/
         grid-template-rows: auto;               /*skapar en rad som ändrar höjd automatiskt*/
         grid-template-areas:                    /*skapar en layout för hur innehållet ska placeras i grid*/
@@ -141,7 +145,7 @@ footer > p{
     .personlig > h2,
     .personlig > p,
     .länkar > h2,
-    .länkar > .link{
+    .link{
         color: white;
     }
     .personlig{
@@ -149,36 +153,36 @@ footer > p{
         padding: 0;
     }
     .personlig > h2{
-        margin: 0 0 2rem 0;
+        margin: 0 0 1rem 0;
     }
     .personlig > p{
-        font-size: 3rem;
+        font-size: 1rem;
     }
     .arbete > h2,
     .länkar > h2,
     .kontakt > h2{
         text-align: center;
         margin-top: 5%;
-        font-size: 4rem;
+        font-size: 2rem;
     }
     .arbete > ul,
-    .länkar > a,
-    .kontakt > p{
-        display: inline-block;      /*gör hela länken till en ruta så att marginalen gäller hela länken och inte bara första raden av den*/
+    .länkar > ul,
+    .kontakt > ul{
+        display: inline-block;      /*gör hela texten till en ruta så att marginalen gäller hela texten och inte bara första raden av den*/
         margin: 0 5% 5% 5%;
     }
     .arbete{
-        grid-area: arbete;          /*kopplar akutell iframe till rätt id i grid area*/
+        grid-area: arbete;          /*kopplar .arbete till rätt id i grid area*/
     }
     .länkar{
-        grid-area: länkar;          /*kopplar akutell iframe till rätt id i grid area*/
+        grid-area: länkar;          /*kopplar .länkar till rätt id i grid area*/
 
         background-color: #404040;
     }
     .kontakt{
-        grid-area: kontakt;         /*kopplar akutell iframe till rätt id i grid area*/
+        grid-area: kontakt;         /*kopplar .kontakt till rätt id i grid area*/
     }
     h2{
-        font-size: 5rem;
+        font-size: 2rem;
     }
 }
